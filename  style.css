@@ -1,0 +1,298 @@
+/* Configurações Globais e Cores */
+:root {
+  --bg-color: #0b0b10;
+  --card-bg: #14141e;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --pink-primary: #ff2a85;
+  --pink-glow: rgba(255, 42, 133, 0.3);
+  --border-color: #262638;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-bottom: 2px solid var(--pink-primary);
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--pink-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+/* Cards de Resumo Futurísticos */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 12px var(--pink-glow);
+}
+
+.card h3 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.card-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--pink-primary);
+}
+
+.card-status {
+  display: block;
+  font-size: 0.75rem;
+  color: #4cd964;
+  margin-top: 5px;
+}
+
+/* Tabela Responsiva */
+.table-container {
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto; /* Garante que a tabela funcione bem no celular */
+}
+
+.table-container h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--pink-primary);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #1a1a28;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+tr:hover {
+  background-color: #1c1c2b;
+}
+
+/* Status dentro da tabela */
+.status-bom {
+  color: #4cd964;
+  font-weight: bold;
+}
+
+.status-atencao {
+  color: #ff9500;
+  font-weight: bold;
+}
+
+.status-indisponivel {
+  color: var(--text-secondary);
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.7rem; }
+  .card-value { font-size: 1.5rem; }
+  th, td { padding: 10px 8px; font-size: 0.85rem; }
+}
+
+/* --- NOVOS ESTILOS ADICIONADOS PARA PIN E EDIÇÃO --- */
+
+.card-login {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.card-login h2 {
+  color: var(--pink-primary);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.info-estudante {
+  background-color: #1a1a28;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.info-estudante p {
+  margin: 4px 0;
+}
+
+.info-estudante strong {
+  color: var(--text-primary);
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.editor-table input {
+  background-color: #0b0b10;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.editor-table input:focus {
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 8px var(--pink-glow);
+}
+
+.editor-table input.input-erro {
+  border-color: #ff3b30 !important;
+  background-color: #2c151a !important;
+}
+
+.btn {
+  background-color: var(--pink-primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #262638;
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: #32324a;
+}
+
+.actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.status-msg {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.status-msg.erro {
+  color: #ff3b30;
+}
+
+.status-msg.sucesso {
+  color: #4cd964;
+}
+
+.status-msg.info {
+  color: var(--text-secondary);
+}
+
+.editor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.editor-table th,
+.editor-table td {
+  padding: 8px 10px;
+}
+
+.editor-table input {
+  width: 100%;
+  max-width: 80px;
+  text-align: center;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}

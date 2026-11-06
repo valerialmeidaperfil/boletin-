@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletim Digital - 8º Ano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho do Boletim -->
+    <header class="header">
+      <h1>Boletim Digital</h1>
+      <p class="subtitle">8º Ano — Turma 8C — Chamada 14</p>
+    </header>
+
+    <!-- Tela de Acesso (PIN) -->
+    <section id="login-section" class="card-login">
+      <h2>Acesso ao Boletim</h2>
+      <div class="info-estudante">
+        <p><strong>Turma:</strong> 8C</p>
+        <p><strong>Número de Chamada:</strong> 14</p>
+      </div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="pin-input">Digite seu PIN:</label>
+          <input type="password" id="pin-input" placeholder="Digite o PIN" required maxlength="20" autocomplete="off">
+        </div>
+        <button type="submit" id="btn-entrar" class="btn">Entrar</button>
+      </form>
+      <div id="login-status" class="status-msg"></div>
+    </section>
+
+    <!-- Conteúdo Principal do Boletim (Oculto até o login) -->
+    <div id="boletim-content" style="display: none;">
+      <!-- Painel de Ações do Aluno -->
+      <div class="actions-bar">
+        <button id="btn-alterar-dados" class="btn">Alterar dados</button>
+        <span id="salvar-status" class="status-msg"></span>
+      </div>
+
+      <!-- Área de Cards de Resumo -->
+      <section class="cards-grid">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p id="card-media" class="card-value">—</p>
+        </div>
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p id="card-faltas" class="card-value">—</p>
+        </div>
+        <div class="card">
+          <h3>Bom Desempenho</h3>
+          <p id="card-bom-desempenho" class="card-value">—</p>
+        </div>
+        <div class="card">
+          <h3>Precisam de Atenção</h3>
+          <p id="card-atencao" class="card-value">—</p>
+        </div>
+        <div class="card highlight">
+          <h3>Frequência Geral</h3>
+          <p id="card-frequencia" class="card-value">92%</p>
+          <span class="card-status">Frequência adequada</span>
+        </div>
+      </section>
+
+      <!-- Tabela de Disciplinas / Área de Exibição -->
+      <section class="table-container">
+        <h2>Desempenho por Disciplina</h2>
+        <div id="editor-container" style="display: none;">
+          <!-- Formulário de edição de notas gerado via script -->
+        </div>
+        <div id="view-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Média</th>
+                <th>Faltas</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-corpo">
+              <!-- As linhas da tabela serão inseridas pelo script.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Conexão com o arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
